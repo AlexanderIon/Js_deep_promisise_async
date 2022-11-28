@@ -1,9 +1,9 @@
 import json from "../tack_one_promises/parser.js";
 import read from "../tack_one_promises/read.js";
+import GameSavingLoader from "./gamesavingloaderAsync.js"
 (async() =>{
     try {
-        let buf= await read()
-        console.log(await json (buf))
+        console.log(await GameSavingLoader.load())
     }
     catch (err){
         console.log(err)
@@ -11,3 +11,4 @@ import read from "../tack_one_promises/read.js";
 
 
 })()
+
